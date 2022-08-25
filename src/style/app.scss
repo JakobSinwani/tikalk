@@ -1,1 +1,13 @@
 @import "table/style";
+@import "chart/style";
+
+.app-title {
+text-align: center;
+font-size: 30px;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

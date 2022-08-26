@@ -1,10 +1,14 @@
 import React from "react";
 import { TABLE_COLUMNS } from "./services/api/rick_and_morty/constants";
 import Table from "./components/table/Table";
+import _ from "lodash";
 
 function CharactersTable({ characters }) {
   const get_un_popular_characters = () => {
-    return characters.filter((c) => c.episode.length === 1);
+    const min_value = _.minBy(characters, (c) => c.episode.length).episode
+      .length;
+
+    return characters.filter((c) => c.episode.length === min_value);
   };
 
   const create_rows = () => {
@@ -17,7 +21,7 @@ function CharactersTable({ characters }) {
     }));
     return rows;
   };
-
+  if (!characters.length) return null;
   return <Table columns={TABLE_COLUMNS} rows={create_rows()} />;
 }
 

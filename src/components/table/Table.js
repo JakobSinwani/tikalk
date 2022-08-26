@@ -19,7 +19,9 @@ function Table({ rows, columns }) {
 
   return (
     <table>
-      <thead>{render_columns(columns)}</thead>
+      <thead>
+        <tr>{render_columns(columns)}</tr>
+      </thead>
       <tbody>{render_rows(rows)}</tbody>
     </table>
   );

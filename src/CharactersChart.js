@@ -17,7 +17,7 @@ function CharactersChart({ characters }) {
   const [chart_data, set_chart_data] = useState([]);
 
   useEffect(create_columns_by_episode_length, [characters]);
-  return <Chart data={chart_data} countSize={60} title={"Populations"} />;
+  return <Chart data={chart_data} countSize={70} title={"Popularity"} />;
 }
 
 export default CharactersChart;
